@@ -1,5 +1,5 @@
-import { FOOTER_INFO } from 'constants/info';
 import React, { FC } from 'react';
+import { FOOTER_INFO } from 'constants/info';
 import { FooterContent, FooterWrapper } from './styled';
 
 export const Footer: FC = () => {
