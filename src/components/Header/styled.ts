@@ -1,0 +1,18 @@
+import styled from 'styled-components';
+import { ReactComponent as Logo } from 'assets/svg/logo.svg';
+
+export const StyledHeader = styled.header`
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 75px;
+  padding: 15px 16px 20px;
+  box-shadow: 0 1px rgba(0, 0, 0, 10%);
+`;
+
+export const MainLogo = styled(Logo)`
+  width: 95px;
+  height: 40px;
+  margin-right: 15px;
+`;
