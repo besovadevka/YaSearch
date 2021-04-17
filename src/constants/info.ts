@@ -1,4 +1,6 @@
 export const SET_SEARCH_TIME = 'SET_SEARCH_TIME';
+export const SET_SEARCH_REQUEST = 'SET_SEARCH_REQUEST';
+export const SET_IS_ON_SEARCH = 'SET_IS_ON_SEARCH';
 
 export const DEFAULT_CONTENT_INFO = [
   'YaSearch - the app for searching books!',

@@ -1,1 +1,5 @@
-export type testProps = {};
+export type AppStateType = {
+  searchTime: number;
+  searchRequest: string;
+  isOnSearch: boolean;
+};
