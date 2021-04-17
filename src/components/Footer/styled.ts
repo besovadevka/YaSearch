@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FOOTER_COLOR, WHITE_COLOR } from 'constants/colors';
+import { FOOTER_COLOR, FOOTER_TEXT_COLOR, WHITE_COLOR } from 'constants/colors';
 
 export const FooterWrapper = styled.footer`
   display: flex;
@@ -14,12 +14,15 @@ export const FooterContent = styled.p`
   margin: 0;
   font-size: 13px;
   line-height: 17px;
-  opacity: 0.6;
-  color: ${WHITE_COLOR};
+  color: ${FOOTER_TEXT_COLOR};
 
   a {
-    color: inherit;
+    color: ${WHITE_COLOR};
     text-decoration: none;
     outline: none;
+
+    &:hover {
+      color: inherit;
+    }
   }
 `;
