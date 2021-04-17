@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --WHITE_COLOR: #ffffff;
+}
+
+body {
+  margin: 0;
+  font: normal 16px/24px "Yandex Sans Display";
+  background-color: var(--BG_COLOR);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

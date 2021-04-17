@@ -1,0 +1,19 @@
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Yandex Sans Display";
+
+  src: local("Yandex Sans Display"), local("Yandex Sans Display Regular"),
+  url("/src/assets/fonts/YandexSansDisplay-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Yandex Sans Display";
+
+  src: local("Yandex Sans Display"), local("Yandex Sans Display Bold"),
+  url("../assets/fonts/YandexSansDisplay-Bold.woff2") format("woff2");
+}
+
+
