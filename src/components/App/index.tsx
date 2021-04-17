@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Header, ContentBlock } from 'components';
+import { Header, ContentBlock, Footer } from 'components';
 
 import { AppStyled } from './styled';
 
@@ -8,6 +8,7 @@ export const App: FC = () => {
     <AppStyled>
       <Header />
       <ContentBlock />
+      <Footer />
     </AppStyled>
   );
 };
