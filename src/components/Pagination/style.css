@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   margin: 0;
-  margin-left: 10px;
 
   gap: 4px;
   padding-inline-start: 0;
@@ -47,7 +46,7 @@
 }
 
 .activePageContainer,
-.activePageLink:hover {
+li .activePageLink:hover {
   background-color: #ffeba0;
   cursor: unset;
 }

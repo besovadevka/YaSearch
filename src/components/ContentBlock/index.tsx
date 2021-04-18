@@ -7,7 +7,7 @@ import {
   selectIsModalActive,
   selectSearchRequest,
 } from 'constants/selectors';
-import { Loader, Modal, TextInfo } from 'components';
+import { Loader, Modal, ModalBookItem, TextInfo } from 'components';
 import { useDelayRequest } from './useDelayRequest';
 import { processingData } from './processingData';
 import { ResultsSearchType } from 'types';
@@ -65,7 +65,9 @@ export const ContentBlock: FC = () => {
           )}
         </DefaultMainContentWrapper>
       </ContentBlockWrapper>
-      <Modal open={isModalActive} />
+      <Modal open={isModalActive}>
+        <ModalBookItem currentBook={currentBook as ResultsSearchType} />
+      </Modal>
     </>
   );
 };

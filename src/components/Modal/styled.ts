@@ -32,8 +32,15 @@ export const ModalWrapper = styled.div`
 `;
 
 export const ModalWindow = styled.div`
-  background: ${WHITE_COLOR};
-  border-radius: 20px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 185px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
 `;
 
 export const CloseButton = styled.button`

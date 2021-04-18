@@ -1,5 +1,4 @@
-import { SET_IS_MODAL_ACTIVE } from 'constants/info';
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { useDispatch } from 'react-redux';
 import {
@@ -9,6 +8,7 @@ import {
   ModalWrapper,
   Overlay,
 } from './styled';
+import { SET_IS_MODAL_ACTIVE } from 'constants/info';
 
 type ModalProps = {
   open: boolean;
@@ -35,18 +35,6 @@ export const Modal: FC<ModalProps> = ({
       close(e);
     }
   };
-
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [open]);
 
   if (!open) {
     return null;
