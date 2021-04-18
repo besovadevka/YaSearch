@@ -12,18 +12,22 @@ export const FooterWrapper = styled.footer`
 
 export const FooterContentWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   max-width: 1400px;
   padding: 40px 116px 0;
+
+  p,
+  button {
+    margin: 0;
+    font-size: 13px;
+    line-height: 17px;
+    color: ${FOOTER_TEXT_COLOR};
+  }
 `;
 
 export const FooterContent = styled.p`
-  margin: 0;
-  font-size: 13px;
-  line-height: 17px;
-  color: ${FOOTER_TEXT_COLOR};
-
   a {
     color: ${WHITE_COLOR};
     text-decoration: none;
@@ -32,5 +36,17 @@ export const FooterContent = styled.p`
     &:hover {
       color: inherit;
     }
+  }
+`;
+
+export const FooterLangButton = styled.button`
+  height: fit-content;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    color: ${WHITE_COLOR};
   }
 `;

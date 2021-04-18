@@ -46,6 +46,9 @@ export const ContentBlock: FC = () => {
     if (searchRequest === '') {
       setIsSearchRequestEmpty(true);
       setSearchResults(null);
+    } else if (searchRequest === null) {
+      setIsSearchRequestEmpty(false);
+      setSearchResults(null);
     }
   }, [searchRequest]);
 

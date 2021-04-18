@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ReactComponent as CrossIcon } from 'assets/svg/crossIcon.svg';
 import { OVERLAY_COLOR, WHITE_COLOR } from 'constants/colors';
 
 export const Overlay = styled.div`
@@ -54,14 +53,4 @@ export const CloseButton = styled.button`
   cursor: pointer;
   border: none;
   outline: none;
-`;
-
-export const Cross = styled(CrossIcon)`
-  width: 100%;
-  height: 100%;
-  opacity: 0.32;
-
-  &:hover {
-    opacity: 1;
-  }
 `;

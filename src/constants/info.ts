@@ -2,8 +2,18 @@ export const SET_SEARCH_REQUEST = 'SET_SEARCH_REQUEST';
 export const SET_IS_LOADING = 'SET_IS_LOADING';
 export const SET_IS_MODAL_ACTIVE = 'SET_IS_MODAL_ACTIVE';
 export const SET_IS_SEARCH_BUTTON_CLICKED = 'SET_IS_SEARCH_BUTTON_CLICKED';
+export const SET_CURR_LANG = 'SET_CURR_LANG';
 
 export const BOOKS_PER_COUNT = 10;
+
+export const CURRENT_LANG = 'currentLanguage';
+export const DEFAULT_LANGUAGE = 'en';
+export const LANGUAGES: string[] = [DEFAULT_LANGUAGE, 'ru'];
+
+export const Languages: { [key: string]: string } = {
+  en: 'English',
+  ru: 'Русский',
+};
 
 export const DEFAULT_CONTENT_INFO = {
   text1: 'Ya',
@@ -13,10 +23,10 @@ export const DEFAULT_CONTENT_INFO = {
 
 export const FOOTER_INFO = [
   '© 2021 ',
-  ['besovadevka', 'https://github.com/besovadevka'],
-  ' for ',
-  ['Yandex', 'https://yandex.ru'],
-  ' with ♥',
+  ['besovadevka ', 'https://github.com/besovadevka'],
+  'for',
+  [' Yandex ', 'https://yandex.ru'],
+  'with ♥',
 ];
 
 export const MODAL_BOOK_ITEM_DATA = [

@@ -36,7 +36,7 @@
 }
 
 .pagination .previous > a,
-.next {
+.pagination .next > a {
   width: auto;
 }
 

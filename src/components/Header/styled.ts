@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import { ReactComponent as Logo } from 'assets/svg/logo.svg';
+import { ReactComponent as LogoEN } from 'assets/svg/logoEN.svg';
+import { ReactComponent as LogoRU } from 'assets/svg/logoRU.svg';
 import { WHITE_COLOR } from 'constants/colors';
+import { LogoParams } from 'typography';
 
 export const HeaderWrapper = styled.header`
   position: sticky;
@@ -21,8 +23,10 @@ export const HeaderContentBlock = styled.div`
   height: 100%;
 `;
 
-export const MainLogo = styled(Logo)`
-  width: 95px;
-  height: 40px;
-  margin-right: 15px;
+export const MainLogoEN = styled(LogoEN)`
+  ${LogoParams}
+`;
+
+export const MainLogoRU = styled(LogoRU)`
+  ${LogoParams}
 `;
