@@ -10,7 +10,7 @@ type Action = { type: string; payload: any };
 
 const appState = {
   searchRequest: null,
-  isLoading: false,
+  isLoading: true,
 };
 
 const appReducer: Reducer<AppStateType, Action> = (
