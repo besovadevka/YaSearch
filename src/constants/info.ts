@@ -1,6 +1,7 @@
 export const SET_SEARCH_REQUEST = 'SET_SEARCH_REQUEST';
 export const SET_IS_LOADING = 'SET_IS_LOADING';
 export const SET_IS_MODAL_ACTIVE = 'SET_IS_MODAL_ACTIVE';
+export const SET_IS_SEARCH_BUTTON_CLICKED = 'SET_IS_SEARCH_BUTTON_CLICKED';
 
 export const DEFAULT_CONTENT_INFO = [
   'YaSearch - the app for searching books!',

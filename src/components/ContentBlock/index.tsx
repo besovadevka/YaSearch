@@ -1,15 +1,20 @@
 import React, { FC, useEffect, useState } from 'react';
-import { API_URL, DEFAULT_CONTENT_INFO, SET_IS_LOADING } from 'constants/info';
+import {
+  DEFAULT_CONTENT_INFO,
+  SET_IS_LOADING,
+  SET_IS_SEARCH_BUTTON_CLICKED,
+} from 'constants/info';
 import { ContentBlockWrapper, DefaultMainContentWrapper } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectIsLoading,
   selectIsModalActive,
+  selectIsSearchButtonClicked,
   selectSearchRequest,
 } from 'constants/selectors';
 import { Loader, Modal, ModalBookItem, TextInfo } from 'components';
 import { useDelayRequest } from './useDelayRequest';
-import { processingData } from './processingData';
+import { fetchDataBooks } from './helpFunctions';
 import { ResultsSearchType } from 'types';
 import { BookList } from './components';
 
@@ -25,23 +30,17 @@ export const ContentBlock: FC = () => {
   const searchRequest = useSelector(selectSearchRequest);
   const isLoading = useSelector(selectIsLoading);
   const isModalActive = useSelector(selectIsModalActive);
+  const isSearchButtonClicked = useSelector(selectIsSearchButtonClicked);
 
   const delayedSearchRequest = useDelayRequest(searchRequest, 1000);
 
   useEffect(() => {
-    if (delayedSearchRequest && searchRequest) {
+    if ((delayedSearchRequest || isSearchButtonClicked) && searchRequest) {
       dispatch({ type: SET_IS_LOADING, payload: true });
-
-      const fullApiUrl = `${API_URL}${searchRequest?.split(' ').join('+')}`;
-      fetch(fullApiUrl)
-        .then((res) => res.json())
-        .then((data) => processingData(data.docs))
-        .then((processingData) => {
-          dispatch({ type: SET_IS_LOADING, payload: false });
-          setSearchResults(processingData);
-        });
+      dispatch({ type: SET_IS_SEARCH_BUTTON_CLICKED, payload: false });
+      fetchDataBooks(searchRequest, dispatch, setSearchResults);
     }
-  }, [delayedSearchRequest, searchRequest, dispatch]);
+  }, [delayedSearchRequest, isSearchButtonClicked, searchRequest, dispatch]);
 
   useEffect(() => {
     if (searchRequest === '') {
