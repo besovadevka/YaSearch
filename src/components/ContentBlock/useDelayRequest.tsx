@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useDelayRequest = (value: string | null, delay: number) => {
+export const useDelayRequest = (value: string | null, delay = 1000) => {
   const [currentValue, setCurrentValue] = useState(value);
 
   useEffect(() => {

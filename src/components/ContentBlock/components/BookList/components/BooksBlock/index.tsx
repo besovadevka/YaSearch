@@ -3,6 +3,7 @@ import { ResultsSearchType } from 'types';
 import { BooksBlockWrapper, BooksRoster } from './styled';
 import { Pagination } from 'components';
 import { BookItem } from './components/BookItem';
+import { BOOKS_PER_COUNT } from 'constants/info';
 
 type BooksBlockProps = {
   searchResults: ResultsSearchType[];
@@ -15,8 +16,11 @@ export const BooksBlock: FC<BooksBlockProps> = ({
 }) => {
   const [page, setPage] = useState(0);
   const list =
-    searchResults.length > 10
-      ? searchResults.slice(page * 10, (page + 1) * 10)
+    searchResults.length > BOOKS_PER_COUNT
+      ? searchResults.slice(
+          page * BOOKS_PER_COUNT,
+          (page + 1) * BOOKS_PER_COUNT
+        )
       : searchResults;
 
   return (
@@ -31,11 +35,11 @@ export const BooksBlock: FC<BooksBlockProps> = ({
           );
         })}
       </BooksRoster>
-      {searchResults.length > 10 && (
+      {searchResults.length > BOOKS_PER_COUNT && (
         <Pagination
           changePage={setPage}
           page={page}
-          pageCount={Math.ceil(searchResults.length / 10)}
+          pageCount={Math.ceil(searchResults.length / BOOKS_PER_COUNT)}
         />
       )}
     </BooksBlockWrapper>

@@ -4,7 +4,7 @@ import {
   SET_IS_LOADING,
   SET_IS_SEARCH_BUTTON_CLICKED,
 } from 'constants/info';
-import { ContentBlockWrapper, DefaultMainContentWrapper } from './styled';
+import { ContentBlockWrapper, MainContentWrapper } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectIsLoading,
@@ -16,7 +16,7 @@ import { Loader, Modal, ModalBookItem, TextInfo } from 'components';
 import { useDelayRequest } from './useDelayRequest';
 import { fetchDataBooks } from './helpFunctions';
 import { ResultsSearchType } from 'types';
-import { BookList } from './components';
+import { BookList, DefaultTextBlock } from './components';
 
 export const ContentBlock: FC = () => {
   const [searchResults, setSearchResults] = useState<
@@ -32,7 +32,7 @@ export const ContentBlock: FC = () => {
   const isModalActive = useSelector(selectIsModalActive);
   const isSearchButtonClicked = useSelector(selectIsSearchButtonClicked);
 
-  const delayedSearchRequest = useDelayRequest(searchRequest, 1000);
+  const delayedSearchRequest = useDelayRequest(searchRequest);
 
   useEffect(() => {
     if ((delayedSearchRequest || isSearchButtonClicked) && searchRequest) {
@@ -52,7 +52,7 @@ export const ContentBlock: FC = () => {
   return (
     <>
       <ContentBlockWrapper>
-        <DefaultMainContentWrapper>
+        <MainContentWrapper>
           {isLoading ? (
             <Loader />
           ) : searchResults ? (
@@ -60,9 +60,9 @@ export const ContentBlock: FC = () => {
           ) : isSearchRequestEmpty ? (
             <TextInfo text="Empty request" />
           ) : (
-            DEFAULT_CONTENT_INFO.map((item: string) => <p key={item}>{item}</p>)
+            <DefaultTextBlock {...DEFAULT_CONTENT_INFO} />
           )}
-        </DefaultMainContentWrapper>
+        </MainContentWrapper>
       </ContentBlockWrapper>
       <Modal open={isModalActive}>
         <ModalBookItem currentBook={currentBook as ResultsSearchType} />
