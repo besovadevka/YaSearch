@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoading, selectSearchRequest } from 'constants/selectors';
 import { Loader } from 'components';
 import { useDelayRequest } from './useDelayRequest';
+import { processingData } from './processingData';
 
 export const ContentBlock: FC = () => {
   const dispatch = useDispatch();
@@ -20,20 +21,7 @@ export const ContentBlock: FC = () => {
       const fullApiUrl = `${API_URL}${searchRequest.split(' ').join('+')}`;
       fetch(fullApiUrl)
         .then((res) => res.json())
-        .then((data) =>
-          data.docs.map((bookItem: any) => {
-            return {
-              title: bookItem.title,
-              author: bookItem.author_name
-                ? bookItem.author_name[0]
-                : 'Unknown',
-              coverId: bookItem.cover_i,
-              publishData: bookItem.first_publish_year,
-              publisher: bookItem.publisher ? bookItem.publisher[0] : 'Unknown',
-              isbn: bookItem.isbn ? bookItem.isbn[0] : 'Unknown',
-            };
-          })
-        )
+        .then((data) => processingData(data.docs))
         .then((processingData) => {
           dispatch({ type: SET_IS_LOADING, payload: false });
           console.log(processingData);

@@ -14,9 +14,7 @@ import { AppStateType } from 'types';
 type Action = { type: string; payload: any };
 
 const appState = {
-  searchTime: 0,
   searchRequest: '',
-  isOnSearch: false,
   isLoading: false,
 };
 
@@ -25,20 +23,10 @@ const appReducer: Reducer<AppStateType, Action> = (
   action
 ) => {
   switch (action.type) {
-    case SET_SEARCH_TIME:
-      return {
-        ...state,
-        searchTime: action.payload,
-      };
     case SET_SEARCH_REQUEST:
       return {
         ...state,
         searchRequest: action.payload,
-      };
-    case SET_IS_ON_SEARCH:
-      return {
-        ...state,
-        isOnSearch: action.payload,
       };
     case SET_IS_LOADING:
       return {
