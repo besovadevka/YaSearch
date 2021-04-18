@@ -1,6 +1,10 @@
 import React, { FC } from 'react';
 import { applyMiddleware, createStore, Reducer } from 'redux';
-import { SET_SEARCH_REQUEST, SET_IS_LOADING } from 'constants/info';
+import {
+  SET_SEARCH_REQUEST,
+  SET_IS_LOADING,
+  SET_IS_MODAL_ACTIVE,
+} from 'constants/info';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
@@ -11,6 +15,7 @@ type Action = { type: string; payload: any };
 const appState = {
   searchRequest: null,
   isLoading: false,
+  isModalActive: false,
 };
 
 const appReducer: Reducer<AppStateType, Action> = (
@@ -27,6 +32,11 @@ const appReducer: Reducer<AppStateType, Action> = (
       return {
         ...state,
         isLoading: action.payload,
+      };
+    case SET_IS_MODAL_ACTIVE:
+      return {
+        ...state,
+        isModalActive: action.payload,
       };
     default:
       return state;

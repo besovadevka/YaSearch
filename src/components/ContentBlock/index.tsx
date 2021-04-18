@@ -2,8 +2,12 @@ import React, { FC, useEffect, useState } from 'react';
 import { API_URL, DEFAULT_CONTENT_INFO, SET_IS_LOADING } from 'constants/info';
 import { ContentBlockWrapper, DefaultMainContentWrapper } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoading, selectSearchRequest } from 'constants/selectors';
-import { Loader, TextInfo } from 'components';
+import {
+  selectIsLoading,
+  selectIsModalActive,
+  selectSearchRequest,
+} from 'constants/selectors';
+import { Loader, Modal, TextInfo } from 'components';
 import { useDelayRequest } from './useDelayRequest';
 import { processingData } from './processingData';
 import { ResultsSearchType } from 'types';
@@ -13,10 +17,14 @@ export const ContentBlock: FC = () => {
   const [searchResults, setSearchResults] = useState<
     ResultsSearchType[] | [] | null
   >(null);
+  const [currentBook, setCurrentBook] = useState<ResultsSearchType | null>(
+    null
+  );
   const [isSearchRequestEmpty, setIsSearchRequestEmpty] = useState(false);
   const dispatch = useDispatch();
   const searchRequest = useSelector(selectSearchRequest);
   const isLoading = useSelector(selectIsLoading);
+  const isModalActive = useSelector(selectIsModalActive);
 
   const delayedSearchRequest = useDelayRequest(searchRequest, 1000);
 
@@ -43,18 +51,21 @@ export const ContentBlock: FC = () => {
   }, [searchRequest]);
 
   return (
-    <ContentBlockWrapper>
-      <DefaultMainContentWrapper>
-        {isLoading ? (
-          <Loader />
-        ) : searchResults ? (
-          <BookList {...{ searchResults }} />
-        ) : isSearchRequestEmpty ? (
-          <TextInfo text="Empty request" />
-        ) : (
-          DEFAULT_CONTENT_INFO.map((item: string) => <p key={item}>{item}</p>)
-        )}
-      </DefaultMainContentWrapper>
-    </ContentBlockWrapper>
+    <>
+      <ContentBlockWrapper>
+        <DefaultMainContentWrapper>
+          {isLoading ? (
+            <Loader />
+          ) : searchResults ? (
+            <BookList {...{ searchResults, setCurrentBook }} />
+          ) : isSearchRequestEmpty ? (
+            <TextInfo text="Empty request" />
+          ) : (
+            DEFAULT_CONTENT_INFO.map((item: string) => <p key={item}>{item}</p>)
+          )}
+        </DefaultMainContentWrapper>
+      </ContentBlockWrapper>
+      <Modal open={isModalActive} />
+    </>
   );
 };
