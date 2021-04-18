@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { TextInfo } from 'components';
-import { ResultsSearchType } from 'types';
-import { BooksBlock } from './components/BooksBlock';
+
 import { BookListWrapper } from './styled';
+import { ResultsSearchType } from 'types';
+import { TextInfo } from 'components';
+import { BooksBlock } from './components/BooksBlock';
 
 type BookListProps = {
   searchResults: ResultsSearchType[] | [];

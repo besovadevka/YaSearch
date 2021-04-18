@@ -1,9 +1,10 @@
 import React, { FC, useState } from 'react';
-import { ResultsSearchType } from 'types';
+
 import { BooksBlockWrapper, BooksRoster } from './styled';
+import { ResultsSearchType } from 'types';
+import { BOOKS_PER_COUNT } from 'constants/info';
 import { Pagination } from 'components';
 import { BookItem } from './components/BookItem';
-import { BOOKS_PER_COUNT } from 'constants/info';
 
 type BooksBlockProps = {
   searchResults: ResultsSearchType[];

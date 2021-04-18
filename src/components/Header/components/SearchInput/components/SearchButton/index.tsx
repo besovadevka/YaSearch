@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { MainButton } from './styled';
 import { useDispatch } from 'react-redux';
-import { SET_IS_SEARCH_BUTTON_CLICKED } from 'constants/info';
 import { useTranslation } from 'react-i18next';
+
+import { SET_IS_SEARCH_BUTTON_CLICKED } from 'constants/info';
+import { MainButton } from './styled';
 
 export const SearchButton: FC = () => {
   const dispatch = useDispatch();

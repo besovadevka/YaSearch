@@ -1,22 +1,23 @@
 import React, { FC, useEffect, useState } from 'react';
-import {
-  DEFAULT_CONTENT_INFO,
-  SET_IS_LOADING,
-  SET_IS_SEARCH_BUTTON_CLICKED,
-} from 'constants/info';
-import { ContentBlockWrapper, MainContentWrapper } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { ContentBlockWrapper, MainContentWrapper } from './styled';
+import { ResultsSearchType } from 'types';
+import { BookList, DefaultTextBlock } from './components';
 import {
   selectIsLoading,
   selectIsModalActive,
   selectIsSearchButtonClicked,
   selectSearchRequest,
 } from 'constants/selectors';
+import {
+  DEFAULT_CONTENT_INFO,
+  SET_IS_LOADING,
+  SET_IS_SEARCH_BUTTON_CLICKED,
+} from 'constants/info';
 import { Loader, Modal, ModalBookItem, TextInfo } from 'components';
 import { useDelayRequest } from './useDelayRequest';
 import { fetchDataBooks } from './helpFunctions';
-import { ResultsSearchType } from 'types';
-import { BookList, DefaultTextBlock } from './components';
 
 export const ContentBlock: FC = () => {
   const [searchResults, setSearchResults] = useState<

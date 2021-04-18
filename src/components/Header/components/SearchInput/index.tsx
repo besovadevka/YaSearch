@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { Cross } from 'typography';
 import { SET_SEARCH_REQUEST } from 'constants/info';
 import { selectSearchRequest } from 'constants/selectors';
-import { useDispatch, useSelector } from 'react-redux';
-import { Cross } from 'typography';
 import { Input } from './components/Input';
 import { SearchButton } from './components/SearchButton';
 import {

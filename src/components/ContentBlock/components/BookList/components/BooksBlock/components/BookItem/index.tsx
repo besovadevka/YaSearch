@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
-import { BOOKS_API_URL, SET_IS_MODAL_ACTIVE } from 'constants/info';
+import { useDispatch } from 'react-redux';
+
 import { ResultsSearchType } from 'types';
+import { BOOKS_API_URL, SET_IS_MODAL_ACTIVE } from 'constants/info';
 import {
   BookInfo,
   BookItemMain,
   BookItemFooter,
   BookItemWrapper,
 } from './styled';
-import { useDispatch } from 'react-redux';
 import { CoverImage } from 'components/CoverImage';
 
 type BookItemProps = {

@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import ReactPaginate from 'react-paginate';
-import './style.css';
 import { useTranslation } from 'react-i18next';
+
+import './style.css';
 
 type PaginationProps = {
   pageCount: number;

@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { ResultsSearchType } from 'types';
 import { ModalBookItemContentWrapper } from './styled';
 import { CoverImage } from 'components';
-import { getItemKey } from './getItemKey';
 import { MODAL_BOOK_ITEM_DATA } from 'constants/info';
-import { useTranslation } from 'react-i18next';
+import { getItemKey } from './getItemKey';
 
 type ModalBookItemProps = {
   currentBook: ResultsSearchType;
