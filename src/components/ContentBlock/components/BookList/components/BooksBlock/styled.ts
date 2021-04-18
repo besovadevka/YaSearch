@@ -12,7 +12,7 @@ export const BooksBlockWrapper = styled.div`
   height: fit-content;
   width: 100%;
 
-  gap: 34px;
+  gap: 45px;
 `;
 
 export const BooksRoster = styled.ul`
