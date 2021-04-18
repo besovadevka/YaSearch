@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as Logo } from 'assets/svg/logo.svg';
+import { ReactComponent as Logo } from 'assets/svg/logoRU.svg';
 import { WHITE_COLOR } from 'constants/colors';
 
 export const HeaderWrapper = styled.header`
