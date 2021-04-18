@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { TextInfo } from 'components';
 import { ResultsSearchType } from 'types';
 import { BooksBlock } from './components/BooksBlock';
 import { BookListWrapper } from './styled';
@@ -13,6 +14,6 @@ export const BookList: FC<BookListProps> = ({ searchResults }) => {
       <BooksBlock {...{ searchResults }} />
     </BookListWrapper>
   ) : (
-    <div>Nothing was found for your request</div>
+    <TextInfo text="Nothing was found for your request" />
   );
 };

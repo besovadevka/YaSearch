@@ -1,5 +1,5 @@
-import { FOOTER_LINK_COLOR_HOVER } from 'constants/colors';
 import styled from 'styled-components';
+import { FOOTER_LINK_COLOR_HOVER } from 'constants/colors';
 
 export const LoaderWrapper = styled.div`
   @keyframes search {
