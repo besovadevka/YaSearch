@@ -13,15 +13,6 @@ export const Pagination: FC<PaginationProps> = ({
   changePage,
   page,
 }) => {
-  const onPageChangeHandler = (page: number) => {
-    changePage(page);
-    const prevLabel = document.querySelector('.previous');
-    if (page < 5) {
-      prevLabel?.classList.add('disabled');
-    } else {
-      prevLabel?.classList.remove('disabled');
-    }
-  };
   return (
     <ReactPaginate
       nextLabel="next"
@@ -36,8 +27,7 @@ export const Pagination: FC<PaginationProps> = ({
       pageLinkClassName={'pageLink'}
       activeClassName={'activePageContainer'}
       activeLinkClassName={'activePageLink'}
-      forcePage={page}
-      onPageChange={(page) => onPageChangeHandler(page.selected)}
+      onPageChange={(page) => changePage(page.selected)}
     />
   );
 };

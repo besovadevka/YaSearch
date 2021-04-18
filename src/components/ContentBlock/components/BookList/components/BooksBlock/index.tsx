@@ -1,26 +1,26 @@
-import { API__COVER_URL, BOOKS_API_URL } from 'constants/info';
 import React, { FC, useState } from 'react';
 import { ResultsSearchType } from 'types';
-import {
-  BooksBlockWrapper,
-  BooksRoster,
-  BookItem,
-  BookInfo,
-  BookItemMain,
-  BookItemFooter,
-} from './styled';
-import noCoverImg from 'assets/images/no_cover.jpg';
+import { BooksBlockWrapper, BooksRoster } from './styled';
 import { Pagination } from 'components';
+import { BookItem } from './components/BookItem';
+import { BOOKS_PER_COUNT } from 'constants/info';
 
 type BooksBlockProps = {
   searchResults: ResultsSearchType[];
+  setCurrentBook: (book: ResultsSearchType) => void;
 };
 
-export const BooksBlock: FC<BooksBlockProps> = ({ searchResults }) => {
+export const BooksBlock: FC<BooksBlockProps> = ({
+  searchResults,
+  setCurrentBook,
+}) => {
   const [page, setPage] = useState(0);
   const list =
-    searchResults.length > 10
-      ? searchResults.slice(page * 10, (page + 1) * 10)
+    searchResults.length > BOOKS_PER_COUNT
+      ? searchResults.slice(
+          page * BOOKS_PER_COUNT,
+          (page + 1) * BOOKS_PER_COUNT
+        )
       : searchResults;
 
   return (
@@ -28,36 +28,18 @@ export const BooksBlock: FC<BooksBlockProps> = ({ searchResults }) => {
       <BooksRoster>
         {list.map((bookItem: ResultsSearchType) => {
           return (
-            <BookItem key={JSON.stringify(bookItem)}>
-              <BookItemMain>
-                <BookInfo>
-                  <h2>{bookItem.title}</h2>
-                  <h3>Author</h3>
-                  <p>{bookItem.author}</p>
-                </BookInfo>
-                <img
-                  src={
-                    bookItem.coverId
-                      ? `${API__COVER_URL}${bookItem.coverId}-L.jpg`
-                      : noCoverImg
-                  }
-                  alt="Book cover"
-                />
-              </BookItemMain>
-              <BookItemFooter>
-                <a href={BOOKS_API_URL} target="_blank" rel="noreferrer">
-                  Books API
-                </a>
-              </BookItemFooter>
-            </BookItem>
+            <BookItem
+              key={JSON.stringify(bookItem)}
+              {...{ bookItem, setCurrentBook }}
+            />
           );
         })}
       </BooksRoster>
-      {searchResults.length > 10 && (
+      {searchResults.length > BOOKS_PER_COUNT && (
         <Pagination
           changePage={setPage}
           page={page}
-          pageCount={Math.ceil(searchResults.length / 10)}
+          pageCount={Math.ceil(searchResults.length / BOOKS_PER_COUNT)}
         />
       )}
     </BooksBlockWrapper>
