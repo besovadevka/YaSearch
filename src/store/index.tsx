@@ -1,11 +1,6 @@
 import React, { FC } from 'react';
 import { applyMiddleware, createStore, Reducer } from 'redux';
-import {
-  SET_SEARCH_TIME,
-  SET_SEARCH_REQUEST,
-  SET_IS_ON_SEARCH,
-  SET_IS_LOADING,
-} from 'constants/info';
+import { SET_SEARCH_REQUEST, SET_IS_LOADING } from 'constants/info';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
@@ -14,7 +9,7 @@ import { AppStateType } from 'types';
 type Action = { type: string; payload: any };
 
 const appState = {
-  searchRequest: '',
+  searchRequest: null,
   isLoading: false,
 };
 
