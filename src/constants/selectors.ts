@@ -8,3 +8,5 @@ export const selectIsModalActive = (state: AppStateType) => state.isModalActive;
 
 export const selectIsSearchButtonClicked = (state: AppStateType) =>
   state.isSearchButtonClicked;
+
+export const selectCurrLang = (state: AppStateType) => state.currLang;

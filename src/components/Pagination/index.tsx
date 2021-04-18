@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import ReactPaginate from 'react-paginate';
 import './style.css';
+import { useTranslation } from 'react-i18next';
 
 type PaginationProps = {
   pageCount: number;
@@ -13,10 +14,11 @@ export const Pagination: FC<PaginationProps> = ({
   changePage,
   page,
 }) => {
+  const { t } = useTranslation();
   return (
     <ReactPaginate
-      nextLabel="next"
-      previousLabel="Previous"
+      nextLabel={t('next')}
+      previousLabel={t('Previous')}
       breakLabel={''}
       pageCount={pageCount}
       initialPage={page}

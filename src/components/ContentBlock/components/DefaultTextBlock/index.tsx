@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type DefaultTextBlockProps = {
   [key: string]: string;
@@ -9,13 +10,14 @@ export const DefaultTextBlock: FC<DefaultTextBlockProps> = ({
   text2,
   text3,
 }) => {
+  const { t } = useTranslation();
   return (
     <>
       <p className="DefaultText">
-        <span>{text1}</span>
-        {text2}
+        <span>{t(text1)}</span>
+        {t(text2)}
       </p>
-      <p className="DefaultText">{text3}</p>
+      <p className="DefaultText">{t(text3)}</p>
     </>
   );
 };
