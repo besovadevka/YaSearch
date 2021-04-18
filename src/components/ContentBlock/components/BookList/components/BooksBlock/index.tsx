@@ -10,6 +10,7 @@ import {
   BookItemFooter,
 } from './styled';
 import noCoverImg from 'assets/images/no_cover.jpg';
+import { Pagination } from 'components';
 
 type BooksBlockProps = {
   searchResults: ResultsSearchType[];
@@ -19,7 +20,7 @@ export const BooksBlock: FC<BooksBlockProps> = ({ searchResults }) => {
   const [page, setPage] = useState(0);
   const list =
     searchResults.length > 10
-      ? searchResults.slice(page, (page + 1) * 10)
+      ? searchResults.slice(page * 10, (page + 1) * 10)
       : searchResults;
 
   return (
@@ -52,6 +53,13 @@ export const BooksBlock: FC<BooksBlockProps> = ({ searchResults }) => {
           );
         })}
       </BooksRoster>
+      {searchResults.length > 10 && (
+        <Pagination
+          changePage={setPage}
+          page={page}
+          pageCount={Math.ceil(searchResults.length / 10)}
+        />
+      )}
     </BooksBlockWrapper>
   );
 };
