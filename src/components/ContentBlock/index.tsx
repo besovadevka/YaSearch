@@ -3,7 +3,7 @@ import { API_URL, DEFAULT_CONTENT_INFO, SET_IS_LOADING } from 'constants/info';
 import { ContentBlockWrapper, DefaultMainContentWrapper } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoading, selectSearchRequest } from 'constants/selectors';
-import { Loader } from 'components';
+import { Loader, TextInfo } from 'components';
 import { useDelayRequest } from './useDelayRequest';
 import { processingData } from './processingData';
 import { ResultsSearchType } from 'types';
@@ -50,7 +50,7 @@ export const ContentBlock: FC = () => {
         ) : searchResults ? (
           <BookList {...{ searchResults }} />
         ) : isSearchRequestEmpty ? (
-          <div>Empty request</div>
+          <TextInfo text="Empty request" />
         ) : (
           DEFAULT_CONTENT_INFO.map((item: string) => <p key={item}>{item}</p>)
         )}
