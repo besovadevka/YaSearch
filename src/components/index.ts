@@ -7,3 +7,4 @@ export { Pagination } from './Pagination';
 export { TextInfo } from './TextInfo';
 export { Modal } from './Modal';
 export { ModalBookItem } from './ModalBookItem';
+export { CoverImage } from './CoverImage';

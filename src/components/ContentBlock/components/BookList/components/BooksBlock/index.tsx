@@ -1,9 +1,5 @@
 import React, { FC, useState } from 'react';
-import {
-  API__COVER_URL,
-  BOOKS_API_URL,
-  SET_IS_MODAL_ACTIVE,
-} from 'constants/info';
+import { BOOKS_API_URL, SET_IS_MODAL_ACTIVE } from 'constants/info';
 import { ResultsSearchType } from 'types';
 import {
   BooksBlockWrapper,
@@ -13,9 +9,9 @@ import {
   BookItemMain,
   BookItemFooter,
 } from './styled';
-import noCoverImg from 'assets/images/no_cover.jpg';
 import { Pagination } from 'components';
 import { useDispatch } from 'react-redux';
+import { CoverImage } from 'components/CoverImage';
 
 type BooksBlockProps = {
   searchResults: ResultsSearchType[];
@@ -38,6 +34,10 @@ export const BooksBlock: FC<BooksBlockProps> = ({
     dispatch({ type: SET_IS_MODAL_ACTIVE, payload: true });
   };
 
+  const onLinkHandler = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
+  };
+
   return (
     <BooksBlockWrapper>
       <BooksRoster>
@@ -53,17 +53,15 @@ export const BooksBlock: FC<BooksBlockProps> = ({
                   <h3>Author</h3>
                   <p>{bookItem.author}</p>
                 </BookInfo>
-                <img
-                  src={
-                    bookItem.coverId
-                      ? `${API__COVER_URL}${bookItem.coverId}-L.jpg`
-                      : noCoverImg
-                  }
-                  alt="Book cover"
-                />
+                <CoverImage coverId={bookItem.coverId} />
               </BookItemMain>
               <BookItemFooter>
-                <a href={BOOKS_API_URL} target="_blank" rel="noreferrer">
+                <a
+                  href={BOOKS_API_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={onLinkHandler}
+                >
                   Books API
                 </a>
               </BookItemFooter>

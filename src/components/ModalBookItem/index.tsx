@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import { ResultsSearchType } from 'types';
-import noCoverImg from 'assets/images/no_cover.jpg';
-import { API__COVER_URL } from 'constants/info';
 import { ModalBookItemContentWrapper } from './styled';
+import { CoverImage } from 'components';
 
 type ModalBookItemProps = {
   currentBook: ResultsSearchType;
@@ -13,10 +12,7 @@ export const ModalBookItem: FC<ModalBookItemProps> = ({
 }) => {
   return (
     <>
-      <img
-        src={coverId ? `${API__COVER_URL}${coverId}-L.jpg` : noCoverImg}
-        alt="Book cover"
-      />
+      <CoverImage {...{ coverId }} />
       <ModalBookItemContentWrapper>
         <h3>{title}</h3>
         <p>
