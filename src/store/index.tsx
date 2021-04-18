@@ -4,6 +4,7 @@ import {
   SET_SEARCH_TIME,
   SET_SEARCH_REQUEST,
   SET_IS_ON_SEARCH,
+  SET_IS_LOADING,
 } from 'constants/info';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -16,6 +17,7 @@ const appState = {
   searchTime: 0,
   searchRequest: '',
   isOnSearch: false,
+  isLoading: false,
 };
 
 const appReducer: Reducer<AppStateType, Action> = (
@@ -37,6 +39,11 @@ const appReducer: Reducer<AppStateType, Action> = (
       return {
         ...state,
         isOnSearch: action.payload,
+      };
+    case SET_IS_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload,
       };
     default:
       return state;
