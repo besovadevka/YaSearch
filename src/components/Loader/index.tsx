@@ -9,7 +9,7 @@ export const Loader: FC = () => {
     <LoaderWrapper>
       <p>
         <span>{t('Ya')}</span>
-        {t('Search')}
+        {t('SearchYa')}
       </p>
     </LoaderWrapper>
   );

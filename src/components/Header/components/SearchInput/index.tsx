@@ -15,8 +15,9 @@ import {
 export const SearchInput: FC = () => {
   const dispatch = useDispatch();
   const searchRequest = useSelector(selectSearchRequest);
-  const onClickCrossHandler = () =>
+  const onClickCrossHandler = () => {
     dispatch({ type: SET_SEARCH_REQUEST, payload: null });
+  };
   return (
     <>
       <SearchInputWrapper>

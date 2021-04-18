@@ -5,6 +5,11 @@ import {
   FOOTER_LINK_COLOR_HOVER,
   TITLE_COLOR,
 } from 'constants/colors';
+import {
+  BookAPILinkFontSize,
+  BookAuthorFontSize,
+  BookTitleFontSize,
+} from 'typography';
 
 export const BookItemWrapper = styled.li`
   display: flex;
@@ -44,13 +49,12 @@ export const BookInfo = styled.section`
   h2 {
     width: 100%;
     margin: 0;
-    font: 700 24px/28px 'Yandex Sans Display';
+    ${BookTitleFontSize};
     color: ${TITLE_COLOR};
   }
 
   h3 {
-    font-size: 18px;
-    line-height: 24px;
+    ${BookAuthorFontSize};
     margin: 26px 0 4px;
   }
 
@@ -68,7 +72,7 @@ export const BookItemFooter = styled.div`
   background-color: ${BOOK_ITEM_FOOTER_COLOR};
 
   a {
-    font-size: 11px;
+    ${BookAPILinkFontSize};
     text-decoration: none;
     outline: none;
     color: ${FOOTER_LINK_COLOR};

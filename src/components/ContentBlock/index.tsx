@@ -36,9 +36,9 @@ export const ContentBlock: FC = () => {
   const delayedSearchRequest = useDelayRequest(searchRequest);
 
   useEffect(() => {
-    if ((delayedSearchRequest || isSearchButtonClicked) && searchRequest) {
-      dispatch({ type: SET_IS_LOADING, payload: true });
+    if (delayedSearchRequest && searchRequest) {
       dispatch({ type: SET_IS_SEARCH_BUTTON_CLICKED, payload: false });
+      dispatch({ type: SET_IS_LOADING, payload: true });
       fetchDataBooks(searchRequest, dispatch, setSearchResults);
     }
   }, [delayedSearchRequest, isSearchButtonClicked, searchRequest, dispatch]);

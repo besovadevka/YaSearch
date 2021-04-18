@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FOOTER_COLOR, FOOTER_TEXT_COLOR, WHITE_COLOR } from 'constants/colors';
+import { FooterFontSize } from 'typography';
 
 export const FooterWrapper = styled.footer`
   display: flex;
@@ -21,8 +22,7 @@ export const FooterContentWrapper = styled.div`
   p,
   button {
     margin: 0;
-    font-size: 13px;
-    line-height: 17px;
+    ${FooterFontSize};
     color: ${FOOTER_TEXT_COLOR};
   }
 `;

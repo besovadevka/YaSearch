@@ -4,6 +4,7 @@ import { ResultsSearchType } from 'types';
 export const processingData = (booksList: any) => {
   return booksList.map((bookItem: any) => {
     return {
+      key: bookItem.key,
       title: bookItem.title,
       author: bookItem.author_name ? bookItem.author_name[0] : 'Unknown',
       coverId: bookItem.cover_i,

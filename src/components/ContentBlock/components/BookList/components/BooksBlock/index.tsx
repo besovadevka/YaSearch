@@ -29,10 +29,7 @@ export const BooksBlock: FC<BooksBlockProps> = ({
       <BooksRoster>
         {list.map((bookItem: ResultsSearchType) => {
           return (
-            <BookItem
-              key={JSON.stringify(bookItem)}
-              {...{ bookItem, setCurrentBook }}
-            />
+            <BookItem key={bookItem.key} {...{ bookItem, setCurrentBook }} />
           );
         })}
       </BooksRoster>

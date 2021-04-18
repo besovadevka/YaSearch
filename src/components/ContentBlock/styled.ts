@@ -1,5 +1,6 @@
 import { FOOTER_LINK_COLOR_HOVER } from 'constants/colors';
 import styled from 'styled-components';
+import { DefaultTextFontSize } from 'typography';
 
 export const ContentBlockWrapper = styled.main`
   display: flex;
@@ -25,7 +26,7 @@ export const MainContentWrapper = styled.article`
   .DefaultText {
     margin-left: -100px;
     margin-top: -50px;
-    font: 700 19px/26px 'Yandex Sans Display';
+    ${DefaultTextFontSize};
 
     span {
       color: ${FOOTER_LINK_COLOR_HOVER};
