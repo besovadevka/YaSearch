@@ -1,10 +1,6 @@
 import React, { FC } from 'react';
 import { applyMiddleware, createStore, Reducer } from 'redux';
-import {
-  SET_SEARCH_TIME,
-  SET_SEARCH_REQUEST,
-  SET_IS_ON_SEARCH,
-} from 'constants/info';
+import { SET_SEARCH_REQUEST, SET_IS_LOADING } from 'constants/info';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
@@ -13,9 +9,8 @@ import { AppStateType } from 'types';
 type Action = { type: string; payload: any };
 
 const appState = {
-  searchTime: 0,
-  searchRequest: '',
-  isOnSearch: false,
+  searchRequest: null,
+  isLoading: false,
 };
 
 const appReducer: Reducer<AppStateType, Action> = (
@@ -23,20 +18,15 @@ const appReducer: Reducer<AppStateType, Action> = (
   action
 ) => {
   switch (action.type) {
-    case SET_SEARCH_TIME:
-      return {
-        ...state,
-        searchTime: action.payload,
-      };
     case SET_SEARCH_REQUEST:
       return {
         ...state,
         searchRequest: action.payload,
       };
-    case SET_IS_ON_SEARCH:
+    case SET_IS_LOADING:
       return {
         ...state,
-        isOnSearch: action.payload,
+        isLoading: action.payload,
       };
     default:
       return state;

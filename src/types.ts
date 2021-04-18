@@ -1,5 +1,13 @@
 export type AppStateType = {
-  searchTime: number;
-  searchRequest: string;
-  isOnSearch: boolean;
+  searchRequest: string | null;
+  isLoading: boolean;
+};
+
+export type ResultsSearchType = {
+  title: string;
+  author: string;
+  coverId: number | undefined;
+  publishData: number;
+  publisher: string;
+  isbn: string;
 };

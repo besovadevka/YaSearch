@@ -4,6 +4,7 @@ import { SEARCH_INPUT_COLOR } from 'constants/colors';
 export const SearchInputWrapper = styled.div`
   display: flex;
   width: calc(100% - 123px);
+  max-width: 800px;
   height: 40px;
   background-color: ${SEARCH_INPUT_COLOR};
   border-top-left-radius: 3px;
