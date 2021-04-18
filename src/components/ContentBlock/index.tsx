@@ -7,6 +7,7 @@ import { Loader } from 'components';
 import { useDelayRequest } from './useDelayRequest';
 import { processingData } from './processingData';
 import { ResultsSearchType } from 'types';
+import { BookList } from './components';
 
 export const ContentBlock: FC = () => {
   const [searchResults, setSearchResults] = useState<
@@ -47,7 +48,7 @@ export const ContentBlock: FC = () => {
         {isLoading ? (
           <Loader />
         ) : searchResults ? (
-          <div>Hey</div>
+          <BookList {...{ searchResults }} />
         ) : isSearchRequestEmpty ? (
           <div>Empty request</div>
         ) : (
