@@ -3,6 +3,7 @@ export type AppStateType = {
   isLoading: boolean;
   isModalActive: boolean;
   isSearchButtonClicked: boolean;
+  searchResults: ResultsSearchType[] | [] | null;
   currLang: string;
 };
 

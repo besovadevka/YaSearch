@@ -7,6 +7,7 @@ import {
   SET_IS_SEARCH_BUTTON_CLICKED,
   DEFAULT_LANGUAGE,
   SET_CURR_LANG,
+  SET_SEARCH_RESULTS,
 } from 'constants/info';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -20,6 +21,7 @@ const appState = {
   isLoading: false,
   isModalActive: false,
   isSearchButtonClicked: false,
+  searchResults: null,
   currLang: DEFAULT_LANGUAGE,
 };
 
@@ -47,6 +49,11 @@ const appReducer: Reducer<AppStateType, Action> = (
       return {
         ...state,
         isSearchButtonClicked: action.payload,
+      };
+    case SET_SEARCH_RESULTS:
+      return {
+        ...state,
+        searchResults: action.payload,
       };
     case SET_CURR_LANG:
       return {

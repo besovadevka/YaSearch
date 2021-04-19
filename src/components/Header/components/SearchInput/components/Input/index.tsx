@@ -10,7 +10,13 @@ export const Input: FC = () => {
   const searchRequest = useSelector(selectSearchRequest);
 
   const onChangeInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: SET_SEARCH_REQUEST, payload: e.target.value.trim() });
+    const newSearchRequest =
+      e.target.value === searchRequest + ' ' &&
+      searchRequest &&
+      searchRequest[searchRequest.length - 1] !== ' '
+        ? e.target.value
+        : e.target.value.trim();
+    dispatch({ type: SET_SEARCH_REQUEST, payload: newSearchRequest });
   };
 
   return (
