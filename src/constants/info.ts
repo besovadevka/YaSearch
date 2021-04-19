@@ -23,11 +23,8 @@ export const DEFAULT_CONTENT_INFO = {
 };
 
 export const FOOTER_INFO = [
-  '© 2021 ',
+  '© 2021 from',
   ['besovadevka ', 'https://github.com/besovadevka'],
-  'for',
-  [' Yandex ', 'https://yandex.ru'],
-  'with ♥',
 ];
 
 export const MODAL_BOOK_ITEM_DATA = [
