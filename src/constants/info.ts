@@ -44,7 +44,7 @@ export const fetchOptions = {
   method: 'GET',
   mode: 'cors',
   headers: {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'https://yasearch-besovadevka.netlify.app/',
     'Access-Control-Allow-Headers': '*',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
     'Content-Type': 'application/json',
