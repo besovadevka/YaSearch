@@ -45,5 +45,6 @@ export const fetchOptions = {
   mode: 'cors',
   headers: {
     'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': '*',
   },
 } as RequestInit;
