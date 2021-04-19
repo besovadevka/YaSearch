@@ -46,6 +46,7 @@ export const fetchOptions = {
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
     'Content-Type': 'application/json',
   },
   referrerPolicy: 'no-referrer',
