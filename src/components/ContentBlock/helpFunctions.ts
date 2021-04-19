@@ -1,4 +1,4 @@
-import { API_URL, SET_IS_LOADING } from 'constants/info';
+import { API_URL, fetchOptions, SET_IS_LOADING } from 'constants/info';
 import { ResultsSearchType } from 'types';
 
 export const processingData = (booksList: any) => {
@@ -21,7 +21,7 @@ export const fetchDataBooks = (
   setSearchResults: (data: ResultsSearchType[] | []) => void
 ) => {
   const fullApiUrl = `${API_URL}${searchRequest?.split(' ').join('+')}`;
-  fetch(fullApiUrl)
+  fetch(fullApiUrl, fetchOptions)
     .then((res) => res.json())
     .then((data) => processingData(data.docs))
     .then((processingData) => {
