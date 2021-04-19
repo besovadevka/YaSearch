@@ -14,6 +14,10 @@ export const HeaderWrapper = styled.header`
   background-color: ${WHITE_COLOR};
   padding: 15px 16px 20px;
   box-shadow: 0 1px rgba(0, 0, 0, 10%);
+
+  @media (max-width: 768px) {
+    height: 65px;
+  }
 `;
 
 export const HeaderContentBlock = styled.div`

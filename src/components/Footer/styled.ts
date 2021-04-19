@@ -9,6 +9,10 @@ export const FooterWrapper = styled.footer`
   height: 100px;
   background-color: ${FOOTER_COLOR};
   background-image: linear-gradient(0deg, #484e5d 0, #343c50 100%);
+
+  @media (max-width: 768px) {
+    height: 90px;
+  }
 `;
 
 export const FooterContentWrapper = styled.div`
@@ -24,6 +28,10 @@ export const FooterContentWrapper = styled.div`
     margin: 0;
     ${FooterFontSize};
     color: ${FOOTER_TEXT_COLOR};
+  }
+
+  @media (max-width: 768px) {
+    padding: 35px 60px 0 106px;
   }
 `;
 

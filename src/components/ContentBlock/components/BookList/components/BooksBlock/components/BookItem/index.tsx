@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { ResultsSearchType } from 'types';
 import { BOOKS_API_URL, SET_IS_MODAL_ACTIVE } from 'constants/info';
@@ -18,6 +19,7 @@ type BookItemProps = {
 
 export const BookItem: FC<BookItemProps> = ({ bookItem, setCurrentBook }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const onBookItemClickHandler = (bookItem: ResultsSearchType) => {
     setCurrentBook(bookItem);
@@ -33,7 +35,7 @@ export const BookItem: FC<BookItemProps> = ({ bookItem, setCurrentBook }) => {
       <BookItemMain>
         <BookInfo>
           <h2>{bookItem.title}</h2>
-          <h3>Author</h3>
+          <h3>{t('Author')}</h3>
           <p>{bookItem.author}</p>
         </BookInfo>
         <CoverImage coverId={bookItem.coverId} />

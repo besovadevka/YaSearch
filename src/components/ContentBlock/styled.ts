@@ -10,6 +10,10 @@ export const ContentBlockWrapper = styled.main`
   min-height: calc(100vh - 175px);
   margin: 0 auto;
   padding: 31px 16px 0 116px;
+
+  @media (max-width: 768px) {
+    min-height: calc(100vh - 155px);
+  }
 `;
 
 export const MainContentWrapper = styled.article`
@@ -24,7 +28,7 @@ export const MainContentWrapper = styled.article`
   }
 
   .DefaultText {
-    margin-left: -100px;
+    margin-left: -116px;
     margin-top: -50px;
     ${DefaultTextFontSize};
 

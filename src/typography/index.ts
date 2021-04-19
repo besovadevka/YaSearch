@@ -9,6 +9,11 @@ export const LogoParams = css`
   width: 95px;
   height: 40px;
   margin-right: 15px;
+
+  @media (max-width: 768px) {
+    width: 88px;
+    height: 35px;
+  }
 `;
 
 export const Cross = styled(CrossIcon)<CrossIconProps>`
