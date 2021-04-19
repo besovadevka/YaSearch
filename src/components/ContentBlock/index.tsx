@@ -45,8 +45,8 @@ export const ContentBlock: FC = () => {
 
   useEffect(() => {
     if (searchRequest === '') {
-      setIsSearchRequestEmpty(true);
       setSearchResults(null);
+      setIsSearchRequestEmpty(true);
     } else if (searchRequest === null) {
       setIsSearchRequestEmpty(false);
       setSearchResults(null);

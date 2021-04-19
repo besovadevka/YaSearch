@@ -36,6 +36,6 @@ export const MODAL_BOOK_ITEM_DATA = [
   'ISBN',
 ];
 
-export const API_URL = 'http://openlibrary.org/search.json?title=';
+export const API_URL = 'https://openlibrary.org/search.json?title=';
 export const API__COVER_URL = 'http://covers.openlibrary.org/b/id/';
 export const BOOKS_API_URL = 'https://openlibrary.org/';
