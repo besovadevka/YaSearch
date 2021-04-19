@@ -1,4 +1,8 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+
+import i18n from 'translation/resource';
 import { FOOTER_INFO, Languages } from 'constants/info';
 import {
   FooterContent,
@@ -6,9 +10,6 @@ import {
   FooterLangButton,
   FooterWrapper,
 } from './styled';
-import i18n from 'translation/resource';
-import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrLang } from 'constants/selectors';
 import { setLanguageEverywhere } from 'constants/appMiddleware';
 

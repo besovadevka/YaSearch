@@ -1,7 +1,8 @@
-import { DEFAULT_LANGUAGE } from 'constants/info';
-import { selectCurrLang } from 'constants/selectors';
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
+
+import { DEFAULT_LANGUAGE } from 'constants/info';
+import { selectCurrLang } from 'constants/selectors';
 import { SearchInput } from './components';
 import {
   MainLogoEN,

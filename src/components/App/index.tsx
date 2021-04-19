@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { Header, ContentBlock, Footer } from 'components';
 import { AppStyled } from './styled';
 import { setLanguageEverywhere } from 'constants/appMiddleware';

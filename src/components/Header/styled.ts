@@ -11,9 +11,18 @@ export const HeaderWrapper = styled.header`
   justify-content: center;
   width: 100%;
   height: 75px;
-  background-color: ${WHITE_COLOR};
   padding: 15px 16px 20px;
+  background-color: ${WHITE_COLOR};
   box-shadow: 0 1px rgba(0, 0, 0, 10%);
+
+  @media (max-width: 768px) {
+    height: 65px;
+    padding: 14px 16px 16px;
+  }
+
+  @media (max-width: 650px) {
+    height: auto;
+  }
 `;
 
 export const HeaderContentBlock = styled.div`
@@ -21,6 +30,10 @@ export const HeaderContentBlock = styled.div`
   width: 100%;
   max-width: 1400px;
   height: 100%;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 
 export const MainLogoEN = styled(LogoEN)`

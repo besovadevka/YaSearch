@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { SET_SEARCH_REQUEST } from 'constants/info';
 import { useDispatch, useSelector } from 'react-redux';
-import { MainInput } from './styled';
+
+import { SET_SEARCH_REQUEST } from 'constants/info';
 import { selectSearchRequest } from 'constants/selectors';
+import { MainInput } from './styled';
 
 export const Input: FC = () => {
   const dispatch = useDispatch();

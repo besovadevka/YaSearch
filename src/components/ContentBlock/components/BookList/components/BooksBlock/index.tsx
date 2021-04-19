@@ -1,9 +1,10 @@
 import React, { FC, useState } from 'react';
-import { ResultsSearchType } from 'types';
+
 import { BooksBlockWrapper, BooksRoster } from './styled';
+import { ResultsSearchType } from 'types';
+import { BOOKS_PER_COUNT } from 'constants/info';
 import { Pagination } from 'components';
 import { BookItem } from './components/BookItem';
-import { BOOKS_PER_COUNT } from 'constants/info';
 
 type BooksBlockProps = {
   searchResults: ResultsSearchType[];
@@ -28,10 +29,7 @@ export const BooksBlock: FC<BooksBlockProps> = ({
       <BooksRoster>
         {list.map((bookItem: ResultsSearchType) => {
           return (
-            <BookItem
-              key={JSON.stringify(bookItem)}
-              {...{ bookItem, setCurrentBook }}
-            />
+            <BookItem key={bookItem.key} {...{ bookItem, setCurrentBook }} />
           );
         })}
       </BooksRoster>

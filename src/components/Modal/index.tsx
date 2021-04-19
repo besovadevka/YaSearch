@@ -1,9 +1,10 @@
 import React, { FC, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { useDispatch } from 'react-redux';
-import { CloseButton, ModalWindow, ModalWrapper, Overlay } from './styled';
-import { SET_IS_MODAL_ACTIVE } from 'constants/info';
+
 import { Cross } from 'typography';
+import { SET_IS_MODAL_ACTIVE } from 'constants/info';
+import { CloseButton, ModalWindow, ModalWrapper, Overlay } from './styled';
 
 type ModalProps = {
   open: boolean;

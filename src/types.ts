@@ -7,6 +7,7 @@ export type AppStateType = {
 };
 
 export type ResultsSearchType = {
+  key: string;
   title: string;
   author: string;
   coverId: number | undefined;
