@@ -45,6 +45,8 @@ export const fetchOptions = {
   mode: 'cors',
   headers: {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Headers': 'X-Requested-With, content-Type, Origin',
+    'Content-Type': 'application/json',
   },
+  referrerPolicy: 'no-referrer',
 } as RequestInit;
