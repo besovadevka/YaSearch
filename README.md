@@ -1,12 +1,18 @@
 #  YaSearch 
 
+Deploy link: https://yasearch-besovadevka.netlify.app/
+
 Stack:  
-1 React - https://reactjs.org/  
-2 Redux, redux-thunk, redux-devtools-extension - https://redux.js.org/  
-3 Typescript - https://www.typescriptlang.org/  
+1. React - https://reactjs.org/  
+2. Redux, redux-thunk, redux-devtools-extension - https://redux.js.org/  
+3. Typescript - https://www.typescriptlang.org/  
 
 Used libs:  
-1 styled-components - https://askd.rocks/pres/styled-gdg/   
+1. styled-components - https://askd.rocks/pres/styled-gdg/
+
+Additional libs:
+1. react-paginate
+2. i18next
 
 Linters: prettier, eslint.
 
