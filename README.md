@@ -1,8 +1,6 @@
 #  YaSearch 
 
-!UPDATE: 19.04.2020 15:27 - fixed requests logic!
-
-Deploy link: https://yasearch-besovadevka.netlify.app/
+### Deploy link: https://yasearch-besovadevka.netlify.app/
 
 Stack:  
 1. React - https://reactjs.org/  
