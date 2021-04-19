@@ -6,6 +6,7 @@ export const ModalBookItemContentWrapper = styled.div`
   width: calc(100% - 190px);
   height: 100%;
   padding-left: 25px;
+
   gap: 7px;
 
   h3 {

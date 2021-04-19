@@ -16,10 +16,10 @@ export const BookItemWrapper = styled.li`
   flex-direction: column;
   width: 100%;
   max-width: 850px;
+  overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.04), 0 4px 10px 0 rgba(13, 35, 67, 0.25);
   cursor: pointer;
-  overflow: hidden;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
@@ -56,9 +56,9 @@ export const BookInfo = styled.section`
   width: calc(100% - 138px);
 
   h2 {
+    ${BookTitleFontSize};
     width: 100%;
     margin: 0;
-    ${BookTitleFontSize};
     color: ${TITLE_COLOR};
   }
 
@@ -78,17 +78,17 @@ export const BookInfo = styled.section`
 
 export const BookItemFooter = styled.div`
   width: 100%;
-  line-height: 15px;
-  padding: 11px 16px 12px;
   margin-top: 25px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 11px 16px 12px;
+  line-height: 15px;
   background-color: ${BOOK_ITEM_FOOTER_COLOR};
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   a {
     ${BookAPILinkFontSize};
+    color: ${FOOTER_LINK_COLOR};
     text-decoration: none;
     outline: none;
-    color: ${FOOTER_LINK_COLOR};
 
     &:hover {
       color: ${FOOTER_LINK_COLOR_HOVER};

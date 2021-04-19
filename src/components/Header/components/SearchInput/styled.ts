@@ -7,14 +7,15 @@ export const SearchInputWrapper = styled.div`
   width: calc(100% - 123px);
   max-width: 800px;
   height: 40px;
+  padding: 2px;
   background-color: ${SEARCH_INPUT_COLOR};
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  padding: 2px;
 
   @media (max-width: 768px) {
     height: 35px;
   }
+
   @media (max-width: 650px) {
     width: 100%;
   }
@@ -31,6 +32,7 @@ export const SearchInputLeftSide = styled.div`
     margin: -4.5px;
     transform: scale(0.85);
   }
+
   @media (max-width: 550px) {
     margin: -4px -4px 0 0;
     transform: scale(0.86);
@@ -40,16 +42,16 @@ export const SearchInputLeftSide = styled.div`
 export const StopSearchButton = styled.button`
   position: absolute;
   top: 6px;
-  left: calc(100% - 130px);
-  width: 28px;
-  height: 28px;
-  background-color: ${BLACK_COLOR};
-  opacity: 0.2;
-  border-radius: 50%;
+  left: calc(100% - 135px);
+  width: 26px;
+  height: 26px;
   padding: 3px;
-  cursor: pointer;
+  background-color: ${BLACK_COLOR};
   border: none;
+  border-radius: 50%;
   outline: none;
+  cursor: pointer;
+  opacity: 0.2;
 
   &:hover {
     opacity: 1;
@@ -60,9 +62,17 @@ export const StopSearchButton = styled.button`
     width: 24px;
     height: 24px;
   }
-  @media (max-width: 440px) {
-    left: calc(100% - 100px);
+
+  @media (max-width: 550px) {
+    left: calc(100% - 120px);
     width: 22px;
     height: 22px;
+  }
+
+  @media (max-width: 440px) {
+    top: 7px;
+    left: calc(100% - 95px);
+    width: 20px;
+    height: 20px;
   }
 `;

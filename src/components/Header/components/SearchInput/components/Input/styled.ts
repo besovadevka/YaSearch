@@ -8,8 +8,8 @@ export const MainInput = styled.input`
   width: calc(100% - 88px);
   height: 100%;
   padding-left: 11px;
-  background-color: ${WHITE_COLOR};
   font-weight: normal;
+  background-color: ${WHITE_COLOR};
   border: none;
   border-radius: 3px;
   outline: none;

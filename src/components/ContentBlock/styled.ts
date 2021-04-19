@@ -15,10 +15,12 @@ export const ContentBlockWrapper = styled.main`
     min-height: calc(100vh - 155px);
     padding: 31px 16px 0 80px;
   }
+
   @media (max-width: 650px) {
     min-height: calc(100vh - 180px);
     padding-left: 50px;
   }
+
   @media (max-width: 550px) {
     padding: 0;
   }
@@ -27,8 +29,8 @@ export const ContentBlockWrapper = styled.main`
 export const MainContentWrapper = styled.article`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
 
   p {
@@ -36,24 +38,27 @@ export const MainContentWrapper = styled.article`
   }
 
   .DefaultText {
-    margin-left: -116px;
-    margin-top: -50px;
     ${DefaultTextFontSize};
+    margin-top: -50px;
+    margin-left: -116px;
 
     @media (max-width: 768px) {
       margin-left: -80px;
     }
+
     @media (max-width: 650px) {
       margin-left: -50px;
     }
+
     @media (max-width: 550px) {
-      margin-left: 0;
       margin-top: -45px;
+      margin-left: 0;
     }
+
     @media (max-width: 440px) {
-      text-align: center;
       margin-top: -75px;
       padding: 40px;
+      text-align: center;
     }
 
     span {

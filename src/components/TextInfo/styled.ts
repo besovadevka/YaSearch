@@ -6,7 +6,7 @@ export const TextInfoWrapper = styled.div`
   height: 100%;
 
   p {
-    margin-left: 16px;
     ${TextBlockFontSize};
+    margin-left: 16px;
   }
 `;

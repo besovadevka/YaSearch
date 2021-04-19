@@ -11,8 +11,8 @@ export const HeaderWrapper = styled.header`
   justify-content: center;
   width: 100%;
   height: 75px;
-  background-color: ${WHITE_COLOR};
   padding: 15px 16px 20px;
+  background-color: ${WHITE_COLOR};
   box-shadow: 0 1px rgba(0, 0, 0, 10%);
 
   @media (max-width: 768px) {
