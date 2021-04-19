@@ -36,7 +36,7 @@ export const MODAL_BOOK_ITEM_DATA = [
   'ISBN',
 ];
 
-export const API_URL = 'https://openlibrary.org/search.json?title=';
+export const API_URL = 'http://openlibrary.org/search.json?title=';
 export const API__COVER_URL = 'http://covers.openlibrary.org/b/id/';
 export const BOOKS_API_URL = 'https://openlibrary.org/';
 
@@ -44,12 +44,11 @@ export const fetchOptions = {
   method: 'GET',
   mode: 'cors',
   headers: {
-    'Access-Control-Allow-Origin': 'https://yasearch-besovadevka.netlify.app/',
+    'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers':
-      'Origin,Accept, X-Requested-With, Content-Type, Authorization',
-    'Access-Control-Allow-Methods': 'GET,OPTIONS',
+      'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Authorization',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Credentials': 'true',
   },
   referrerPolicy: 'no-referrer',
 } as RequestInit;
