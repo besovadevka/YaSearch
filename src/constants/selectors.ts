@@ -10,3 +10,5 @@ export const selectIsSearchButtonClicked = (state: AppStateType) =>
   state.isSearchButtonClicked;
 
 export const selectCurrLang = (state: AppStateType) => state.currLang;
+
+export const selectSearchResults = (state: AppStateType) => state.searchResults;

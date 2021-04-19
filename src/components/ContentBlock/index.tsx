@@ -9,25 +9,24 @@ import {
   selectIsModalActive,
   selectIsSearchButtonClicked,
   selectSearchRequest,
+  selectSearchResults,
 } from 'constants/selectors';
 import {
   DEFAULT_CONTENT_INFO,
   SET_IS_LOADING,
   SET_IS_SEARCH_BUTTON_CLICKED,
+  SET_SEARCH_RESULTS,
 } from 'constants/info';
 import { Loader, Modal, ModalBookItem, TextInfo } from 'components';
 import { useDelayRequest } from './useDelayRequest';
 import { fetchDataBooks } from './helpFunctions';
 
 export const ContentBlock: FC = () => {
-  const [searchResults, setSearchResults] = useState<
-    ResultsSearchType[] | [] | null
-  >(null);
   const [currentBook, setCurrentBook] = useState<ResultsSearchType | null>(
     null
   );
-  const [isSearchRequestEmpty, setIsSearchRequestEmpty] = useState(false);
   const dispatch = useDispatch();
+  const searchResults = useSelector(selectSearchResults);
   const searchRequest = useSelector(selectSearchRequest);
   const isLoading = useSelector(selectIsLoading);
   const isModalActive = useSelector(selectIsModalActive);
@@ -36,22 +35,23 @@ export const ContentBlock: FC = () => {
   const delayedSearchRequest = useDelayRequest(searchRequest);
 
   useEffect(() => {
-    if (delayedSearchRequest && searchRequest) {
-      dispatch({ type: SET_IS_SEARCH_BUTTON_CLICKED, payload: false });
+    if (searchRequest !== null) {
       dispatch({ type: SET_IS_LOADING, payload: true });
-      fetchDataBooks(searchRequest, dispatch, setSearchResults);
+      dispatch({ type: SET_IS_SEARCH_BUTTON_CLICKED, payload: false });
+      if (searchRequest === '') {
+        dispatch({ type: SET_SEARCH_RESULTS, payload: null });
+        dispatch({ type: SET_IS_LOADING, payload: false });
+      } else if (delayedSearchRequest) {
+        fetchDataBooks(searchRequest, dispatch);
+      }
     }
   }, [delayedSearchRequest, isSearchButtonClicked, searchRequest, dispatch]);
 
   useEffect(() => {
-    if (searchRequest === '') {
-      setSearchResults(null);
-      setIsSearchRequestEmpty(true);
-    } else if (searchRequest === null) {
-      setIsSearchRequestEmpty(false);
-      setSearchResults(null);
+    if (searchRequest === null) {
+      dispatch({ type: SET_SEARCH_RESULTS, payload: null });
     }
-  }, [searchRequest]);
+  }, [searchRequest, dispatch]);
 
   return (
     <>
@@ -59,10 +59,10 @@ export const ContentBlock: FC = () => {
         <MainContentWrapper>
           {isLoading ? (
             <Loader />
+          ) : searchRequest === '' ? (
+            <TextInfo text="Empty request" />
           ) : searchResults ? (
             <BookList {...{ searchResults, setCurrentBook }} />
-          ) : isSearchRequestEmpty ? (
-            <TextInfo text="Empty request" />
           ) : (
             <DefaultTextBlock {...DEFAULT_CONTENT_INFO} />
           )}

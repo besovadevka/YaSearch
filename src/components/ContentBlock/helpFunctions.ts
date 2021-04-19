@@ -1,5 +1,4 @@
-import { API_URL, SET_IS_LOADING } from 'constants/info';
-import { ResultsSearchType } from 'types';
+import { API_URL, SET_IS_LOADING, SET_SEARCH_RESULTS } from 'constants/info';
 
 export const processingData = (booksList: any) => {
   return booksList.map((bookItem: any) => {
@@ -15,17 +14,13 @@ export const processingData = (booksList: any) => {
   });
 };
 
-export const fetchDataBooks = (
-  searchRequest: string,
-  dispatch: any,
-  setSearchResults: (data: ResultsSearchType[] | []) => void
-) => {
+export const fetchDataBooks = (searchRequest: string, dispatch: any) => {
   const fullApiUrl = `${API_URL}${searchRequest?.split(' ').join('+')}`;
   fetch(fullApiUrl)
     .then((res) => res.json())
     .then((data) => processingData(data.docs))
     .then((processingData) => {
       dispatch({ type: SET_IS_LOADING, payload: false });
-      setSearchResults(processingData);
+      dispatch({ type: SET_SEARCH_RESULTS, payload: processingData });
     });
 };
