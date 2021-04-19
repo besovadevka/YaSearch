@@ -14,6 +14,10 @@ export const LogoParams = css`
     width: 88px;
     height: 35px;
   }
+  @media (max-width: 440px) {
+    width: 80px;
+    height: 35px;
+  }
 `;
 
 export const Cross = styled(CrossIcon)<CrossIconProps>`
@@ -38,7 +42,7 @@ export const DefaultTextFontSize = css`
     font-size: 17px;
     line-height: 25px;
   }
-  @media (max-width: 440px) {
+  @media (max-width: 550px) {
     font-size: 16px;
     line-height: 24px;
   }
@@ -56,8 +60,8 @@ export const BookTitleFontSize = css`
     line-height: 26px;
   }
   @media (max-width: 440px) {
-    font-size: 21px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
 
@@ -73,8 +77,8 @@ export const BookAuthorFontSize = css`
     line-height: 23px;
   }
   @media (max-width: 440px) {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: 14px;
+    line-height: 20px;
   }
 `;
 

@@ -24,6 +24,11 @@ export const BookItemWrapper = styled.li`
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
+
+  @media (max-width: 550px) {
+    border-radius: 0;
+    box-shadow: none;
+  }
 `;
 
 export const BookItemMain = styled.div`
@@ -38,6 +43,10 @@ export const BookItemMain = styled.div`
     margin-left: 16px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px;
+
+    @media (max-width: 440px) {
+      width: 100px;
+    }
   }
 `;
 
@@ -60,6 +69,10 @@ export const BookInfo = styled.section`
 
   p {
     margin: 0;
+  }
+
+  @media (max-width: 440px) {
+    width: calc(100% - 116px);
   }
 `;
 

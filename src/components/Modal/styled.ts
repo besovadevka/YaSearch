@@ -35,6 +35,16 @@ export const ModalWrapper = styled.div`
     margin: calc(50vh - 150px) auto;
     padding: 36px 16px 8px;
   }
+  @media (max-width: 550px) {
+    width: 380px;
+    min-height: 380px;
+    margin: calc(50vh - 180px) auto;
+  }
+  @media (max-width: 440px) {
+    width: 280px;
+    margin: calc(50vh - 220px) auto;
+    padding: 36px 16px;
+  }
 `;
 
 export const ModalWindow = styled.div`
@@ -50,6 +60,24 @@ export const ModalWindow = styled.div`
     @media (max-width: 768px) {
       width: 170px;
     }
+    @media (max-width: 550px) {
+      width: 130px;
+      height: 100%;
+    }
+    @media (max-width: 550px) {
+      width: 100px;
+      height: 100%;
+    }
+    @media (max-width: 440px) {
+      width: 85px;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 440px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 `;
 
@@ -64,4 +92,9 @@ export const CloseButton = styled.button`
   cursor: pointer;
   border: none;
   outline: none;
+
+  @media (max-width: 440px) {
+    width: 20px;
+    height: 20px;
+  }
 `;

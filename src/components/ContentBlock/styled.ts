@@ -19,6 +19,9 @@ export const ContentBlockWrapper = styled.main`
     min-height: calc(100vh - 180px);
     padding-left: 50px;
   }
+  @media (max-width: 550px) {
+    padding: 0;
+  }
 `;
 
 export const MainContentWrapper = styled.article`
@@ -43,9 +46,24 @@ export const MainContentWrapper = styled.article`
     @media (max-width: 650px) {
       margin-left: -50px;
     }
+    @media (max-width: 550px) {
+      margin-left: 0;
+      margin-top: -45px;
+    }
+    @media (max-width: 440px) {
+      text-align: center;
+      margin-top: -75px;
+      padding: 40px;
+    }
 
     span {
       color: ${FOOTER_LINK_COLOR_HOVER};
+    }
+  }
+
+  @media (max-width: 550px) {
+    & > div > p {
+      margin: 20px;
     }
   }
 `;

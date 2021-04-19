@@ -12,4 +12,11 @@ export const MainButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+
+  @media (max-width: 550px) {
+    width: 80px;
+  }
+  @media (max-width: 440px) {
+    width: 60px;
+  }
 `;

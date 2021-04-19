@@ -13,4 +13,8 @@ export const MainInput = styled.input`
   border: none;
   border-radius: 3px;
   outline: none;
+
+  @media (max-width: 440px) {
+    width: calc(100% - 68px);
+  }
 `;

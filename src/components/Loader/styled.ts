@@ -19,8 +19,17 @@ export const LoaderWrapper = styled.div`
   p {
     ${BookTitleFontSize};
     margin: -35px 0 0 -116px;
+
     span {
       color: ${FOOTER_LINK_COLOR_HOVER};
+    }
+
+    @media (max-width: 768px) {
+      margin-left: -80px;
+    }
+
+    @media (max-width: 650px) {
+      margin-left: -50px;
     }
   }
 `;

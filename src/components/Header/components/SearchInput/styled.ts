@@ -31,6 +31,10 @@ export const SearchInputLeftSide = styled.div`
     margin: -4.5px;
     transform: scale(0.85);
   }
+  @media (max-width: 550px) {
+    margin: -4px -4px 0 0;
+    transform: scale(0.86);
+  }
 `;
 
 export const StopSearchButton = styled.button`
@@ -55,5 +59,10 @@ export const StopSearchButton = styled.button`
     left: calc(100% - 125px);
     width: 24px;
     height: 24px;
+  }
+  @media (max-width: 440px) {
+    left: calc(100% - 100px);
+    width: 22px;
+    height: 22px;
   }
 `;

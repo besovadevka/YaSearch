@@ -7,6 +7,10 @@ export const BooksBlockWrapper = styled.div`
   width: 100%;
 
   gap: 45px;
+
+  @media (max-width: 440px) {
+    gap: 25px;
+  }
 `;
 
 export const BooksRoster = styled.ul`

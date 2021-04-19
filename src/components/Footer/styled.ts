@@ -39,6 +39,15 @@ export const FooterContentWrapper = styled.div`
   @media (max-width: 650px) {
     padding: 35px 50px 0 50px;
   }
+  @media (max-width: 550px) {
+    padding: 25px 30px 0 25px;
+  }
+  @media (max-width: 440px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+  }
 `;
 
 export const FooterContent = styled.p`

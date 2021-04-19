@@ -88,7 +88,25 @@ li .activePageLink:hover {
     line-height: 34px;
   }
 }
+@media (max-width: 550px) {
+  .pagination {
+    align-self: center;
+  }
+  .pagination li a {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+  }
+}
 @media (max-width: 440px) {
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .previous,
+  .next {
+    width: 100%;
+  }
   .pageContainer,
   .previous,
   .next,
@@ -97,6 +115,10 @@ li .activePageLink:hover {
   .break > a {
     font-size: 15px;
     line-height: 32px;
+  }
+  .pagination li a {
+    width: 30px;
+    height: 30px;
   }
 }
 
