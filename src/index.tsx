@@ -5,7 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import 'typography/normalize.css';
 import 'typography/fonts.css';
 import 'typography/common.css';
+import { AppState } from 'store';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <AppState>
+    <App />
+  </AppState>,
+  document.getElementById('root')
+);
 
 reportWebVitals();
