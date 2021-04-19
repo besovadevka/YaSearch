@@ -28,6 +28,13 @@ export const ModalWrapper = styled.div`
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(14, 21, 47, 0.1),
     0 -2px 6px rgba(14, 21, 47, 0.06);
+
+  @media (max-width: 768px) {
+    width: 450px;
+    min-height: 320px;
+    margin: calc(50vh - 150px) auto;
+    padding: 36px 16px 8px;
+  }
 `;
 
 export const ModalWindow = styled.div`
@@ -39,6 +46,10 @@ export const ModalWindow = styled.div`
     width: 185px;
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.05);
+
+    @media (max-width: 768px) {
+      width: 170px;
+    }
   }
 `;
 

@@ -13,6 +13,11 @@ export const ContentBlockWrapper = styled.main`
 
   @media (max-width: 768px) {
     min-height: calc(100vh - 155px);
+    padding: 31px 16px 0 80px;
+  }
+  @media (max-width: 650px) {
+    min-height: calc(100vh - 180px);
+    padding-left: 50px;
   }
 `;
 
@@ -31,6 +36,13 @@ export const MainContentWrapper = styled.article`
     margin-left: -116px;
     margin-top: -50px;
     ${DefaultTextFontSize};
+
+    @media (max-width: 768px) {
+      margin-left: -80px;
+    }
+    @media (max-width: 650px) {
+      margin-left: -50px;
+    }
 
     span {
       color: ${FOOTER_LINK_COLOR_HOVER};

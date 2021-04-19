@@ -28,8 +28,8 @@ export const SearchInput: FC = () => {
         )}
         <Input />
         <SearchButton />
+        <SearchInputLeftSide />
       </SearchInputWrapper>
-      <SearchInputLeftSide />
     </>
   );
 };

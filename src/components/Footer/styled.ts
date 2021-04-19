@@ -13,6 +13,9 @@ export const FooterWrapper = styled.footer`
   @media (max-width: 768px) {
     height: 90px;
   }
+  @media (max-width: 650px) {
+    height: 80px;
+  }
 `;
 
 export const FooterContentWrapper = styled.div`
@@ -31,7 +34,10 @@ export const FooterContentWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 35px 60px 0 106px;
+    padding: 35px 60px 0 80px;
+  }
+  @media (max-width: 650px) {
+    padding: 35px 50px 0 50px;
   }
 `;
 

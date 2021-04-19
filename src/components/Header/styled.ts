@@ -17,6 +17,11 @@ export const HeaderWrapper = styled.header`
 
   @media (max-width: 768px) {
     height: 65px;
+    padding: 14px 16px 16px;
+  }
+
+  @media (max-width: 650px) {
+    height: auto;
   }
 `;
 
@@ -25,6 +30,10 @@ export const HeaderContentBlock = styled.div`
   width: 100%;
   max-width: 1400px;
   height: 100%;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 
 export const MainLogoEN = styled(LogoEN)`
